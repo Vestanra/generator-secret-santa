@@ -1,12 +1,33 @@
-import { GlobalStyled } from './GlobalStyled';
 import { List } from './List';
+import { createTheme, CssBaseline, } from "@mui/material";
+import { ThemeProvider } from "@mui/system";
 
-function App() {
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#004d40",
+    }
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        ul: {
+          listStyle: 'none',
+          padding: 0,
+          margin: 0,
+        }
+      }
+    }
+  }
+});
+
+
+function App() {  
   return (
-    <div>
-      <GlobalStyled/>
-      <List/>
-    </div>
+    <ThemeProvider theme={theme}>
+      <List />
+      <CssBaseline/>
+    </ThemeProvider>
   );
 }
 
