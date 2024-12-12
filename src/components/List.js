@@ -124,7 +124,6 @@ export const List = () => {
                     <Button onClick={handleReset} variant="text">Reset</Button>
                 </Box>
             </Box>
-            {/* <MembersInfo/> */}
         </Container>
     )
 };
